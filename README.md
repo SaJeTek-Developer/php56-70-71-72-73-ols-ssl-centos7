@@ -19,8 +19,8 @@ Set ENV DOCUMENT_ROOT to / for regular websites or /public for laravel applicati
 
 <H4>How to run:</H4>
 <code>
-docker run -d -p 8708:7080 -p 8000:80 -p 8443:443 --name sajetek/php56-70-71-72-73-ols-ssl-centos7 -e "DOCUMENT_ROOT=/" -e "DEFAULT_PHP=56" docker.io/sajetek/php5.6-ols-ssl<br/>
-docker run -d -p 8708:7080 -p 8000:80 -p 8443:443 --name sajetek/php56-70-71-72-73-ols-ssl-centos7 -e "DOCUMENT_ROOT=/" -e "DEFAULT_PHP=56" sajetek/php5.6-ols-ssl -v 
+docker run -d -p 8708:7080 -p 8000:80 -p 8443:443 --name sajetek-php56-70-71-72-73-ols-ssl-centos7 -e "DOCUMENT_ROOT=/" -e "DEFAULT_PHP=56" docker.io/sajetek/php56-70-71-72-73-ols-ssl-centos7<br/>
+docker run -d -p 8708:7080 -p 8000:80 -p 8443:443 --name sajetek-php56-70-71-72-73-ols-ssl-centos7 -e "DOCUMENT_ROOT=/" -e "DEFAULT_PHP=56" docker.io/sajetek/php56-70-71-72-73-ols-ssl-centos7 -v 
 /some/host/path:/usr/local/lsws/Example/html
 </code><br/>
 
