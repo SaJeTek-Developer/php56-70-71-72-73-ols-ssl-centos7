@@ -6,7 +6,7 @@ ENV DEFAULT_PHP=56
 ENV DOCUMENT_ROOT=/
 
 # Set DNS servers (optional)
-RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf
+#RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
 # Install necessary packages for OpenLiteSpeed
 RUN sed -i 's/centos.mirrors.ovh.net\/ftp.centos.org/vault.centos.org/g' /etc/yum.repos.d/CentOS-Base.repo && \
@@ -38,6 +38,9 @@ RUN sed -i 's/centos.mirrors.ovh.net\/ftp.centos.org/vault.centos.org/g' /etc/yu
     yum clean all && \
     rm -rf /tmp/* /usr/local/lsws/autoupdate/*.tgz /usr/local/lsws/autoupdate/openlitespeed && \
 	mkdir /run/systemd/system && \
+	mkdir /var/lib/php/session && \
+	chown root:nobody /var/lib/php/session && \
+	chmod 770 /var/lib/php/session && \
 	mkdir -p /usr/local/lsws/Example/lscache && \
 	openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /usr/local/lsws/Example.key -out /usr/local/lsws/Example.crt -subj "/C=US/ST=State/L=City/O=Organization/CN=Example"
 
